@@ -6,19 +6,30 @@ import numpy as np
 
 kLabelingFile = "labels.txt"
 
-def GetAlreadyLabeledFilenames():
-    filenames = []
-
+def GetLabels():
+    labels = []
     with open(kLabelingFile, "r") as f:
         for line in f.readlines():
-            filenames.append(line.split()[0] + " " + line.split()[1])
+            fields = line.split()
+            label = {"file": fields[0]}
+            for i in range(1, len(fields), 2):
+                label[fields[i]] = fields[i + 1]
+            labels.append(label)
+    return labels
 
-    return filenames
+def GetFieldFromLabels(field):
+    values = []
+    for label in GetLabels():
+        values.append(label[field])
+    return values
+
+def GetAlreadyLabeledFilenames():
+    return GetFieldFromLabels("money")
 
 def Sharpen(image):
     image[:, :, 1] = image[:, :, 0]
     image[:, :, 2] = image[:, :, 0]
-    image = (image > .89) * 255
+    image = (image > .99) * 255
     return image
 
 # We increase the recursion depth here because the recursive

@@ -1,142 +1,170 @@
-long_playthrough/2019-09-24 01:20:09:246881.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:37:08:054527.png money 3875 tech_points 698
-long_playthrough/2019-09-24 01:23:51:854634.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:35:57:818066.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:19:24:295075.png money 550 tech_points 640
-long_playthrough/2019-09-24 01:34:24:880456.png money 3475 tech_points 684
-long_playthrough/2019-09-24 01:24:35:611696.png money 950 tech_points 666
-long_playthrough/2019-09-24 01:21:48:055439.png money 700 tech_points 652
-long_playthrough/2019-09-24 01:35:45:252596.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:35:13:760231.png money 3675 tech_points 685
-long_playthrough/2019-09-24 01:35:05:610108.png money 3475 tech_points ILL
-long_playthrough/2019-09-24 01:23:37:279763.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:37:11:302938.png money 3875 tech_points 698
-long_playthrough/2019-09-24 01:22:50:024489.png money 700 tech_points 652
-long_playthrough/2019-09-24 01:26:12:436858.png money 1975 tech_points 668
-long_playthrough/2019-09-24 01:23:02:685914.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:28:22:711079.png money 1250 tech_points 668
-long_playthrough/2019-09-24 01:19:10:029018.png money 525 tech_points 638
-long_playthrough/2019-09-24 01:19:03:650252.png money 525 tech_points 638
-long_playthrough/2019-09-24 01:35:28:127349.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:20:24:414733.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:22:49:522729.png money 700 tech_points 652
-long_playthrough/2019-09-24 01:27:49:324262.png money 600 tech_points 668
-long_playthrough/2019-09-24 01:33:36:745742.png money 2775 tech_points 684
-long_playthrough/2019-09-24 01:24:07:757337.png money 800 tech_points 658
-long_playthrough/2019-09-24 01:37:01:587732.png money 3875 tech_points 696
-long_playthrough/2019-09-24 01:25:41:682985.png money 1675 tech_points 558
-long_playthrough/2019-09-24 01:21:31:581745.png money 675 tech_points 650
-long_playthrough/2019-09-24 01:29:48:625306.png money 2125 tech_points 674
-long_playthrough/2019-09-24 01:31:15:283670.png money 2525 tech_points 680
-long_playthrough/2019-09-24 01:24:12:772110.png money 875 tech_points 662
-long_playthrough/2019-09-24 01:34:49:288197.png money 3475 tech_points 684
-long_playthrough/2019-09-24 01:24:02:025380.png money 800 tech_points 658
-long_playthrough/2019-09-24 01:20:31:785680.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:36:00:245040.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:31:56:199099.png money 2775 tech_points 681
-long_playthrough/2019-09-24 01:33:15:388486.png money 2775 tech_points 683
-long_playthrough/2019-09-24 01:36:29:337637.png money None tech_points None
-long_playthrough/2019-09-24 01:38:14:760190.png money 4000 tech_points 704
-long_playthrough/2019-09-24 01:25:34:025388.png money 1650 tech_points 666
-long_playthrough/2019-09-24 01:18:28:506082.png money 425 tech_points 634
-long_playthrough/2019-09-24 01:20:55:315034.png money 650 tech_points 648
-long_playthrough/2019-09-24 01:29:36:563143.png money 2100 tech_points 672
-long_playthrough/2019-09-24 01:38:24:512492.png money 4025 tech_points 706
-long_playthrough/2019-09-24 01:21:20:906659.png money 675 tech_points 650
-long_playthrough/2019-09-24 01:39:05:739923.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:35:32:005522.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:37:32:783619.png money 3950 tech_points 700
-long_playthrough/2019-09-24 01:39:18:595727.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:30:16:792570.png money 2125 tech_points 676
-long_playthrough/2019-09-24 01:28:57:133180.png money 1250 tech_points 671
-long_playthrough/2019-09-24 01:30:32:406237.png money 2125 tech_points 676
-long_playthrough/2019-09-24 01:36:48:449225.png money 3875 tech_points 696
-long_playthrough/2019-09-24 01:35:07:549252.png money 3675 tech_points 685
-long_playthrough/2019-09-24 01:27:01:376791.png money None tech_points None
-long_playthrough/2019-09-24 01:35:15:659664.png money 3675 tech_points 685
-long_playthrough/2019-09-24 01:36:24:140335.png money None tech_points None
-long_playthrough/2019-09-24 01:23:43:712329.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:18:10:277889.png money 400 tech_points 632
-long_playthrough/2019-09-24 01:23:18:785294.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:22:07:646873.png money None tech_points None
-long_playthrough/2019-09-24 01:23:35:847622.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:33:40:118978.png money 2775 tech_points 684
-long_playthrough/2019-09-24 01:19:50:711943.png money 575 tech_points 642
-long_playthrough/2019-09-24 01:32:44:549673.png money 2775 tech_points 683
-long_playthrough/2019-09-24 01:23:32:534395.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:20:50:133079.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:26:57:994078.png money None tech_points None
-long_playthrough/2019-09-24 01:27:35:908722.png money 600 tech_points 668
-long_playthrough/2019-09-24 01:28:33:542862.png money 1250 tech_points 669
-long_playthrough/2019-09-24 01:19:46:421238.png money 575 tech_points 642
-long_playthrough/2019-09-24 01:21:03:239523.png money 650 tech_points 648
-long_playthrough/2019-09-24 01:35:18:475903.png money 3675 tech_points 685
-long_playthrough/2019-09-24 01:20:28:316791.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:21:13:665462.png money 675 tech_points 650
-long_playthrough/2019-09-24 01:27:56:406473.png money 600 tech_points 668
-long_playthrough/2019-09-24 01:32:52:769697.png money None tech_points None
-long_playthrough/2019-09-24 01:39:32:816834.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:20:29:354315.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:38:00:626952.png money 3975 tech_points 702
-long_playthrough/2019-09-24 01:19:57:703520.png money 600 tech_points 644
-long_playthrough/2019-09-24 01:23:25:664169.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:34:38:765326.png money 3475 tech_points 684
-long_playthrough/2019-09-24 01:34:27:068288.png money 3475 tech_points 684
-long_playthrough/2019-09-24 01:23:26:967406.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:37:51:256045.png money 3975 tech_points 702
-long_playthrough/2019-09-24 01:34:31:473009.png money 3475 tech_points 684
-long_playthrough/2019-09-24 01:22:00:420080.png money 700 tech_points 652
-long_playthrough/2019-09-24 01:26:10:727790.png money 1975 tech_points 668
-long_playthrough/2019-09-24 01:38:29:870237.png money 4025 tech_points 706
-long_playthrough/2019-09-24 01:26:04:712279.png money 1775 tech_points 668
-long_playthrough/2019-09-24 01:18:17:827482.png money 400 tech_points 632
-long_playthrough/2019-09-24 01:21:10:102081.png money 675 tech_points 650
-long_playthrough/2019-09-24 01:35:26:779201.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:28:01:020364.png money 1200 tech_points 668
-long_playthrough/2019-09-24 01:32:53:895763.png money None tech_points None
-long_playthrough/2019-09-24 01:39:36:695584.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:33:51:758271.png money 2825 tech_points 684
-long_playthrough/2019-09-24 01:31:02:510319.png money 2125 tech_points 677
-long_playthrough/2019-09-24 01:35:55:200708.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:25:31:550542.png money 1650 tech_points 666
-long_playthrough/2019-09-24 01:27:41:697757.png money 600 tech_points ILL
-long_playthrough/2019-09-24 01:37:55:905049.png money 3975 tech_points 702
-long_playthrough/2019-09-24 01:22:52:913949.png money 700 tech_points 652
-long_playthrough/2019-09-24 01:35:43:889559.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:36:16:021956.png money None tech_points None
-long_playthrough/2019-09-24 01:19:43:419246.png money 575 tech_points 642
-long_playthrough/2019-09-24 01:36:16:273474.png money None tech_points None
-long_playthrough/2019-09-24 01:37:17:170902.png money 3875 tech_points 698
-long_playthrough/2019-09-24 01:37:26:959137.png money 3925 tech_points ILL
-long_playthrough/2019-09-24 01:34:28:713297.png money 3475 tech_points 684
-long_playthrough/2019-09-24 01:39:09:180189.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:28:15:834860.png money 1250 tech_points 668
-long_playthrough/2019-09-24 01:25:25:250748.png money 1650 tech_points 666
-long_playthrough/2019-09-24 01:25:17:397860.png money 1600 tech_points 666
-long_playthrough/2019-09-24 01:39:09:279585.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:21:45:292354.png money 700 tech_points 652
-long_playthrough/2019-09-24 01:26:15:622497.png money 1975 tech_points 668
-long_playthrough/2019-09-24 01:37:28:390281.png money 3950 tech_points 700
-long_playthrough/2019-09-24 01:23:21:938489.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:35:37:088066.png money 3875 tech_points 695
-long_playthrough/2019-09-24 01:30:39:289798.png money 2125 tech_points 677
-long_playthrough/2019-09-24 01:27:59:095595.png money 1200 tech_points 668
-long_playthrough/2019-09-24 01:26:43:178203.png money 2025 tech_points 668
-long_playthrough/2019-09-24 01:32:01:804305.png money 2775 tech_points 681
-long_playthrough/2019-09-24 01:35:21:000718.png money 3675 tech_points 685
-long_playthrough/2019-09-24 01:33:21:647862.png money 2775 tech_points 683
-long_playthrough/2019-09-24 01:19:28:866007.png money 550 tech_points 640
-long_playthrough/2019-09-24 01:20:47:325982.png money 625 tech_points 646
-long_playthrough/2019-09-24 01:18:59:207382.png money 525 tech_points 638
-long_playthrough/2019-09-24 01:25:53:247187.png money 1725 tech_points 668
-long_playthrough/2019-09-24 01:29:53:160320.png money 2125 tech_points 674
-long_playthrough/2019-09-24 01:23:43:754278.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:29:31:276706.png money 2100 tech_points 672
-long_playthrough/2019-09-24 01:33:03:472335.png money None tech_points None
-long_playthrough/2019-09-24 01:18:57:577604.png money 525 tech_points 638
-long_playthrough/2019-09-24 01:23:11:833269.png money 775 tech_points 656
-long_playthrough/2019-09-24 01:18:21:101238.png money 400 tech_points 632
-long_playthrough/2019-09-24 01:22:16:366617.png money None tech_points None
-long_playthrough/2019-09-24 01:39:38:945900.png money None tech_points None
-long_playthrough/2019-09-24 01:38:57:049864.png money 4225 tech_points 707
-long_playthrough/2019-09-24 01:20:50:483951.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:20:09:246881.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:37:08:054527.png money 3875 tech_points 698
+long_playthrough/2019-09-24_01:23:51:854634.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:35:57:818066.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:19:24:295075.png money 550 tech_points 640
+long_playthrough/2019-09-24_01:34:24:880456.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:24:35:611696.png money 950 tech_points 666
+long_playthrough/2019-09-24_01:21:48:055439.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:35:45:252596.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:35:13:760231.png money 3675 tech_points 685
+long_playthrough/2019-09-24_01:35:05:610108.png money 3475 tech_points ILL
+long_playthrough/2019-09-24_01:23:37:279763.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:37:11:302938.png money 3875 tech_points 698
+long_playthrough/2019-09-24_01:22:50:024489.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:26:12:436858.png money 1975 tech_points 668
+long_playthrough/2019-09-24_01:23:02:685914.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:28:22:711079.png money 1250 tech_points 668
+long_playthrough/2019-09-24_01:19:10:029018.png money 525 tech_points 638
+long_playthrough/2019-09-24_01:19:03:650252.png money 525 tech_points 638
+long_playthrough/2019-09-24_01:35:28:127349.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:20:24:414733.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:22:49:522729.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:27:49:324262.png money 600 tech_points 668
+long_playthrough/2019-09-24_01:33:36:745742.png money 2775 tech_points 684
+long_playthrough/2019-09-24_01:24:07:757337.png money 800 tech_points 658
+long_playthrough/2019-09-24_01:37:01:587732.png money 3875 tech_points 696
+long_playthrough/2019-09-24_01:25:41:682985.png money 1675 tech_points 558
+long_playthrough/2019-09-24_01:21:31:581745.png money 675 tech_points 650
+long_playthrough/2019-09-24_01:29:48:625306.png money 2125 tech_points 674
+long_playthrough/2019-09-24_01:31:15:283670.png money 2525 tech_points 680
+long_playthrough/2019-09-24_01:24:12:772110.png money 875 tech_points 662
+long_playthrough/2019-09-24_01:34:49:288197.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:24:02:025380.png money 800 tech_points 658
+long_playthrough/2019-09-24_01:20:31:785680.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:36:00:245040.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:31:56:199099.png money 2775 tech_points 681
+long_playthrough/2019-09-24_01:33:15:388486.png money 2775 tech_points 683
+long_playthrough/2019-09-24_01:36:29:337637.png money None tech_points None
+long_playthrough/2019-09-24_01:38:14:760190.png money 4000 tech_points 704
+long_playthrough/2019-09-24_01:25:34:025388.png money 1650 tech_points 666
+long_playthrough/2019-09-24_01:18:28:506082.png money 425 tech_points 634
+long_playthrough/2019-09-24_01:20:55:315034.png money 650 tech_points 648
+long_playthrough/2019-09-24_01:29:36:563143.png money 2100 tech_points 672
+long_playthrough/2019-09-24_01:38:24:512492.png money 4025 tech_points 706
+long_playthrough/2019-09-24_01:21:20:906659.png money 675 tech_points 650
+long_playthrough/2019-09-24_01:39:05:739923.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:35:32:005522.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:37:32:783619.png money 3950 tech_points 700
+long_playthrough/2019-09-24_01:39:18:595727.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:30:16:792570.png money 2125 tech_points 676
+long_playthrough/2019-09-24_01:28:57:133180.png money 1250 tech_points 671
+long_playthrough/2019-09-24_01:30:32:406237.png money 2125 tech_points 676
+long_playthrough/2019-09-24_01:36:48:449225.png money 3875 tech_points 696
+long_playthrough/2019-09-24_01:35:07:549252.png money 3675 tech_points 685
+long_playthrough/2019-09-24_01:27:01:376791.png money None tech_points None
+long_playthrough/2019-09-24_01:35:15:659664.png money 3675 tech_points 685
+long_playthrough/2019-09-24_01:36:24:140335.png money None tech_points None
+long_playthrough/2019-09-24_01:23:43:712329.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:18:10:277889.png money 400 tech_points 632
+long_playthrough/2019-09-24_01:23:18:785294.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:22:07:646873.png money None tech_points None
+long_playthrough/2019-09-24_01:23:35:847622.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:33:40:118978.png money 2775 tech_points 684
+long_playthrough/2019-09-24_01:19:50:711943.png money 575 tech_points 642
+long_playthrough/2019-09-24_01:32:44:549673.png money 2775 tech_points 683
+long_playthrough/2019-09-24_01:23:32:534395.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:20:50:133079.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:26:57:994078.png money None tech_points None
+long_playthrough/2019-09-24_01:27:35:908722.png money 600 tech_points 668
+long_playthrough/2019-09-24_01:28:33:542862.png money 1250 tech_points 669
+long_playthrough/2019-09-24_01:19:46:421238.png money 575 tech_points 642
+long_playthrough/2019-09-24_01:21:03:239523.png money 650 tech_points 648
+long_playthrough/2019-09-24_01:35:18:475903.png money 3675 tech_points 685
+long_playthrough/2019-09-24_01:20:28:316791.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:21:13:665462.png money 675 tech_points 650
+long_playthrough/2019-09-24_01:27:56:406473.png money 600 tech_points 668
+long_playthrough/2019-09-24_01:32:52:769697.png money None tech_points None
+long_playthrough/2019-09-24_01:39:32:816834.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:20:29:354315.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:38:00:626952.png money 3975 tech_points 702
+long_playthrough/2019-09-24_01:19:57:703520.png money 600 tech_points 644
+long_playthrough/2019-09-24_01:23:25:664169.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:34:38:765326.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:34:27:068288.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:23:26:967406.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:37:51:256045.png money 3975 tech_points 702
+long_playthrough/2019-09-24_01:34:31:473009.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:22:00:420080.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:26:10:727790.png money 1975 tech_points 668
+long_playthrough/2019-09-24_01:38:29:870237.png money 4025 tech_points 706
+long_playthrough/2019-09-24_01:26:04:712279.png money 1775 tech_points 668
+long_playthrough/2019-09-24_01:18:17:827482.png money 400 tech_points 632
+long_playthrough/2019-09-24_01:21:10:102081.png money 675 tech_points 650
+long_playthrough/2019-09-24_01:35:26:779201.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:28:01:020364.png money 1200 tech_points 668
+long_playthrough/2019-09-24_01:32:53:895763.png money None tech_points None
+long_playthrough/2019-09-24_01:39:36:695584.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:33:51:758271.png money 2825 tech_points 684
+long_playthrough/2019-09-24_01:31:02:510319.png money 2125 tech_points 677
+long_playthrough/2019-09-24_01:35:55:200708.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:25:31:550542.png money 1650 tech_points 666
+long_playthrough/2019-09-24_01:27:41:697757.png money 600 tech_points ILL
+long_playthrough/2019-09-24_01:37:55:905049.png money 3975 tech_points 702
+long_playthrough/2019-09-24_01:22:52:913949.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:35:43:889559.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:36:16:021956.png money None tech_points None
+long_playthrough/2019-09-24_01:19:43:419246.png money 575 tech_points 642
+long_playthrough/2019-09-24_01:36:16:273474.png money None tech_points None
+long_playthrough/2019-09-24_01:37:17:170902.png money 3875 tech_points 698
+long_playthrough/2019-09-24_01:37:26:959137.png money 3925 tech_points ILL
+long_playthrough/2019-09-24_01:34:28:713297.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:39:09:180189.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:28:15:834860.png money 1250 tech_points 668
+long_playthrough/2019-09-24_01:25:25:250748.png money 1650 tech_points 666
+long_playthrough/2019-09-24_01:25:17:397860.png money 1600 tech_points 666
+long_playthrough/2019-09-24_01:39:09:279585.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:21:45:292354.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:26:15:622497.png money 1975 tech_points 668
+long_playthrough/2019-09-24_01:37:28:390281.png money 3950 tech_points 700
+long_playthrough/2019-09-24_01:23:21:938489.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:35:37:088066.png money 3875 tech_points 695
+long_playthrough/2019-09-24_01:30:39:289798.png money 2125 tech_points 677
+long_playthrough/2019-09-24_01:27:59:095595.png money 1200 tech_points 668
+long_playthrough/2019-09-24_01:26:43:178203.png money 2025 tech_points 668
+long_playthrough/2019-09-24_01:32:01:804305.png money 2775 tech_points 681
+long_playthrough/2019-09-24_01:35:21:000718.png money 3675 tech_points 685
+long_playthrough/2019-09-24_01:33:21:647862.png money 2775 tech_points 683
+long_playthrough/2019-09-24_01:19:28:866007.png money 550 tech_points 640
+long_playthrough/2019-09-24_01:20:47:325982.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:18:59:207382.png money 525 tech_points 638
+long_playthrough/2019-09-24_01:25:53:247187.png money 1725 tech_points 668
+long_playthrough/2019-09-24_01:29:53:160320.png money 2125 tech_points 674
+long_playthrough/2019-09-24_01:23:43:754278.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:29:31:276706.png money 2100 tech_points 672
+long_playthrough/2019-09-24_01:33:03:472335.png money None tech_points None
+long_playthrough/2019-09-24_01:18:57:577604.png money 525 tech_points 638
+long_playthrough/2019-09-24_01:23:11:833269.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:18:21:101238.png money 400 tech_points 632
+long_playthrough/2019-09-24_01:22:16:366617.png money None tech_points None
+long_playthrough/2019-09-24_01:39:38:945900.png money None tech_points None
+long_playthrough/2019-09-24_01:38:57:049864.png money 4225 tech_points 707
+long_playthrough/2019-09-24_01:20:50:483951.png money 625 tech_points 646
+long_playthrough/2019-09-24_01:22:37:575712.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:23:40:500203.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:20:55:541124.png money 650 tech_points 648
+long_playthrough/2019-09-24_01:22:11:948305.png money None tech_points None
+long_playthrough/2019-09-24_01:25:46:154397.png money 1725 tech_points 668
+long_playthrough/2019-09-24_01:21:13:832571.png money 675 tech_points 650
+long_playthrough/2019-09-24_01:22:54:377164.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:31:32:587699.png money 2575 tech_points 680
+long_playthrough/2019-09-24_01:31:59:174460.png money 2775 tech_points 681
+long_playthrough/2019-09-24_01:19:25:982825.png money 550 tech_points 640
+long_playthrough/2019-09-24_01:26:08:717010.png money 1775 tech_points 668
+long_playthrough/2019-09-24_01:25:13:533222.png money 1550 tech_points 666
+long_playthrough/2019-09-24_01:24:10:323523.png money 800 tech_points 658
+long_playthrough/2019-09-24_01:34:43:274291.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:25:50:531073.png money 1725 tech_points 668
+long_playthrough/2019-09-24_01:27:21:069773.png money 0 tech_points 668
+long_playthrough/2019-09-24_01:24:07:708139.png money 800 tech_points 658
+long_playthrough/2019-09-24_01:23:55:033070.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:38:33:382171.png money 4025 tech_points 706
+long_playthrough/2019-09-24_01:26:01:645903.png money 1775 tech_points 668
+long_playthrough/2019-09-24_01:33:52:858628.png money 2825 tech_points 684
+long_playthrough/2019-09-24_01:22:00:084674.png money 700 tech_points 652
+long_playthrough/2019-09-24_01:30:34:172105.png money 2125 tech_points 676
+long_playthrough/2019-09-24_01:35:02:701464.png money 3475 tech_points 684
+long_playthrough/2019-09-24_01:23:23:192187.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:19:25:815646.png money 550 tech_points 640
+long_playthrough/2019-09-24_01:23:26:215514.png money 775 tech_points 656
+long_playthrough/2019-09-24_01:34:03:872986.png money 2875 tech_points 684

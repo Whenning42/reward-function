@@ -44,6 +44,8 @@ import util
 # image here is an np array.
 kUnlabeledComponent = (255, 255, 255)
 def GetConnectedComponents(image):
+    kMaxComponents = 6
+
     working_image = image.copy()
     working_image = ThresholdImage(working_image)
     components = []
@@ -52,7 +54,12 @@ def GetConnectedComponents(image):
     for x in range(0, image.shape[1]):
         pos = (kYSweepPos, x)
         if np.all(working_image[pos] == kUnlabeledComponent):
-            label_color = ((current_component + 1) / 5 * 255)
+            # Here we ensure that label_color is never set to kUnlabledComponent
+            # which is 255.
+            if current_component == kMaxComponents - 1:
+                print("Encountered more components than expected")
+                current_component = 0
+            label_color = ((current_component + 1) / kMaxComponents * 255)
             components.append(LabelComponent(working_image, pos, label_color))
             current_component += 1
 

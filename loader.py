@@ -10,10 +10,12 @@ import numpy as np
 import random
 import itertools
 
-kDataDir = "long_playthrough"
-kLabelingFile = "labels.txt"
+kDataFolder = "long_playthrough"
+kLabelFile = "labels.txt"
 kCrop = (27, 398, 80, 417)
-kCropDimensions = (kCrop[3] - kCrop[1], kCrop[2] - kCrop[0])
+kMaxDigitSize = (16, 8)
+kNumClasses = 10
+# kCropDimensions = (kCrop[3] - kCrop[1], kCrop[2] - kCrop[0])
 
 # If the labels change after class creation, this class will reflect
 # that change.
@@ -25,18 +27,18 @@ class DataLoader:
         self.data_folder = data_folder
         self.label_file = label_file
 
-    def _GetAllImageFilenames(self):
+    def GetAllImageFilenames(self):
         files = glob.glob(os.path.join(self.data_folder, "*.png"))
         return [os.path.basename(file) for file in files]
 
-    def _GetLabeledImageFilenames(self):
+    def GetLabeledImageFilenames(self):
         values = []
         for label in self._LoadLabels():
             values.append(label[kPathKey])
         return values
 
-    def _GetUnlabeledImageFilenames(self):
-        return list(set(self._GetAllImageFilenames()) - set(self._GetLabeledImageFilenames()))
+    def GetUnlabeledImageFilenames(self):
+        return list(set(self.GetAllImageFilenames()) - set(self.GetLabeledImageFilenames()))
 
     # Returns a list of dictionaries holding the labels for every image
     # i.e. [{"file": "image.png", "money": 1025, "tech_points": 678}, ...]
@@ -56,10 +58,10 @@ class DataLoader:
     # Returns a list of an np array per image of shape (H, W, C = 3).
     # If crop is not None then the given crop will be applied to each image.
     # The crop should be of the form (x0, y0, x1, y2).
-    def _LoadImages(self, filenames):
+    def LoadImages(self, filenames):
         images = []
         for i, filename in enumerate(filenames):
-            image = Image.open(filename)
+            image = Image.open(os.path.join(kDataFolder, filename))
             if self.crop is not None:
                 image = image.crop(self.crop)
             images.append(np.asarray(image))
@@ -77,7 +79,7 @@ class DataLoader:
     # Returned image objects are of the form
     # {"image": image, "label", None}
     def LoadUnlabeledImages(self):
-        images = self._LoadImages(self._GetUnlabeledImageFilenames())
+        images = self.LoadImages(self.GetUnlabeledImageFilenames())
         return self._AddLabelsToImages(images, itertools.repeat(None))
 
 
@@ -85,7 +87,7 @@ class DataLoader:
     # Returned image objects are of the form
     # {"image": image, "label", label (just money for now)}
     def LoadLabeledImages(self):
-        images = self._LoadImages(self._GetLabeledImageFilenames())
+        images = self.LoadImages(self.GetLabeledImageFilenames())
         labels = self._LoadLabels()
         return self._AddLabelsToImages(images, labels)
 
@@ -111,18 +113,21 @@ def SegmentImages(images):
     for image in tqdm(images):
         _, templates_for_image = processing.GetConnectedComponents(image)
         for template in templates_for_image:
-            # We use this format so that our labeled and unlabeled images can
+            # We use this format so that our labeled and unlabeled templates can
             # have a common data structure.
             templates.append({"class": -1, "template": template})
     return templates
 
-def SegmentImagesAndApplyLabels(templates, labels):
+def SegmentImagesAndApplyLabels(labeled_images):
     labeled_templates = []
-    for image, label in zip(tqdm(images), labels):
+    for labeled_image in tqdm(labled_images):
+        image = labeled_image["image"]
+        label = labeled_image["label"]
         component_vis, templates = processing.GetConnectedComponents(image)
         if len(label["money"]) != len(templates):
-            print("Potential failure in connected components processing")
-            print(label["money"])
+            print("Number of connected components differs from the number of digit labels")
+            print("Label is:", label["money"])
+            print("Segmentation output:")
             util.DisplayImage(component_vis, blocking = False)
             continue
         for i, template in enumerate(templates):
@@ -144,27 +149,29 @@ def TemplateIsOutlierSized(template):
         return True
     return False
 
-
 def FilterOutlierSizedTemplates(labeled_templates):
-    for v in labeled_templates:
-        width = v["template"].shape[1]
-        height = v["template"].shape[0]
+    def OutlierSized(labeled_template):
+        template = labeled_template["template"]
+        width = template.shape[1]
+        height = template.shape[0]
         if height <= 11 or height >= 18:
             print("Unusual height:", height)
-            print("Class: ", v["class"])
+            print("Class: ", labeled_template["class"])
             print("Template:")
-            util.DisplayImage(v["template"] * 255)
-            labeled_templates.remove(v)
-            continue
+            # util.DisplayImage(template * 255)
+            return False
         if width >= 10:
             print("Unusual width:", width)
-            print("Class: ", v["class"])
+            print("Class: ", labeled_template["class"])
             print("Template:")
-            util.DisplayImage(v["template"] * 255)
-            labeled_templates.remove(v)
-            continue
+            # util.DisplayImage(template * 255)
+            return False
+        return True
 
-def DisplayTemplateInfo(labeled_templates):
+    # I know this might not be performant, but big dogs do what big dogs want.
+    return list(filter(OutlierSized, labeled_templates))
+
+def DisplayTemplateInfo(labeled_templates, show_class_distribution = True):
     template_widths = []
     template_heights = []
     classes = np.zeros((10,))
@@ -190,17 +197,41 @@ def DisplayTemplateInfo(labeled_templates):
     plt.title("Height distribution")
     plt.show()
 
-    util.ShowPrebinnedHistogram(classes, "Class distribution")
+    if show_class_distribution:
+        util.ShowPrebinnedHistogram(classes, "Class distribution")
+
+# new_size is given as (height, width)
+def ResizeTemplatesInPlace(labeled_templates, new_size):
+    print("Resizing templates")
+    for labeled_template in tqdm(labeled_templates):
+        template = labeled_template["template"]
+        old_height, old_width = template.shape[0:1]
+        resized = np.zeros((*(new_size), template.shape[2]))
+        offset_x = new_size[1] // 2 - old_width // 2
+        offset_y = new_size[0] // 2 - old_height // 2
+        resized[offset_y : offset_y + old_height, \
+                offset_x : offset_x + old_width] = template
+        labeled_template["template"] = resized
 
 if __name__ == "__main__":
-    print("Files remain unlabeled", len(GetUnlabeledFilenames()))
-    # labels = LoadLabels()
-    # labels = FilterOutImagesWithoutLabels(labels)
+    loader = DataLoader(kDataFolder, kLabelFile, kCrop)
+    print("Images remaining unlabeled", len(loader.GetUnlabeledImageFilenames()))
+    labeled_images = loader.LoadLabeledImages()
+    labeled_templates = SegmentImagesAndApplyLabels(labeled_images)
+    labeled_templates = FilterOutlierSizedTemplates(labeled_templates)
 
-    # images = LoadImages(GetAlreadyLabeledFilenames())
-    # labeled_templates = SegmentImagesAndApplyLabels(images, labels)
-    unlabled_images = LoadImages(random.sample(GetUnlabeledFilenames(), 1000))
-    unlabled_templates = SegmentImages(unlabled_images)
+    DisplayTemplateInfo(unlabeled_templates, show_class_distribution = False)
+    ResizeTemplatesInPlace(labeled_templates, kMaxDigitSize) # (height, width)
 
-    FilterOutlierSizedTemplates(unlabled_templates)
-    DisplayTemplateInfo(unlabled_templates)
+    num_templates = len(labeled_templates)
+    train_templates = labled_templates[: 6 * labeled_templates // 10]
+    val_templates = labled_templates[6 * labeled_templates // 10 : 8 * labeled_templates // 10]
+    test_templates = labled_templates[8 * labeled_templates // 10 : ]
+
+    train_x, train_y = ConvertToTensors(train_templates)
+    val_x, val_y = ConvertToTensors(val_templates)
+    test_x, test_y = ConvertToTensors(test_templates)
+
+    classifier = Dense2DClassifier(kNumClasses, kMaxDigitSize)
+    TrainClassifier(classifier, train_x, train_y, val_x, val_y)
+    # EvaluateClassifier(classifier, test_x, test_y)

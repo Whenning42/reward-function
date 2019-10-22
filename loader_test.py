@@ -53,11 +53,26 @@ def test_DataLoaderMultipleImages(fs):
     labeled_images = data_loader.LoadLabeledImages()
     unlabeled_images = data_loader.LoadUnlabeledImages()
 
-    print("All", data_loader._GetAllImageFilenames())
-    print("Unlabeled", data_loader._GetUnlabeledImageFilenames())
-    print("Labeled", data_loader._GetLabeledImageFilenames())
-
     # Test that LoadLabeledImages gave us our labeled image
     assert labeled_images[0]["image"].shape == (1, 1, 3)
     # Test that LoadUnlabedImages gave us our unlabeled image
     assert unlabeled_images[0]["image"].shape == (2, 2, 3)
+
+def test_GetImageFilenames(fs):
+    kLabeledImage = "labeled.png"
+    kUnlabeledImage = "unlabeled.png"
+    kLabelPath = "labels.txt"
+    kDataFolder = "./"
+
+    Image.new("RGB", (1, 1)).save(kLabeledImage)
+    Image.new("RGB", (2, 2)).save(kUnlabeledImage)
+
+    label_writer = loader.LabelWriter(kLabelPath)
+    label_writer.WriteLabel(kLabeledImage, 0, 0)
+
+    data_loader = loader.DataLoader(kDataFolder, kLabelPath)
+    labeled_image_filenames = data_loader.GetLabeledImageFilenames()
+    unlabeled_image_filenames = data_loader.GetUnlabeledImageFilenames()
+
+    assert labeled_image_filenames == [kLabeledImage]
+    assert unlabeled_image_filenames == [kUnlabeledImage]

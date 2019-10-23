@@ -9,11 +9,12 @@ from tqdm import tqdm
 import numpy as np
 import random
 import itertools
+import ml
 
 kDataFolder = "long_playthrough"
 kLabelFile = "labels.txt"
 kCrop = (27, 398, 80, 417)
-kMaxDigitSize = (16, 8)
+kMaxDigitSize = (16, 8, 3)
 kNumClasses = 10
 # kCropDimensions = (kCrop[3] - kCrop[1], kCrop[2] - kCrop[0])
 
@@ -60,7 +61,7 @@ class DataLoader:
     # The crop should be of the form (x0, y0, x1, y2).
     def LoadImages(self, filenames):
         images = []
-        for i, filename in enumerate(filenames):
+        for i, filename in enumerate(tqdm(filenames)):
             image = Image.open(os.path.join(kDataFolder, filename))
             if self.crop is not None:
                 image = image.crop(self.crop)
@@ -120,7 +121,7 @@ def SegmentImages(images):
 
 def SegmentImagesAndApplyLabels(labeled_images):
     labeled_templates = []
-    for labeled_image in tqdm(labled_images):
+    for labeled_image in tqdm(labeled_images):
         image = labeled_image["image"]
         label = labeled_image["label"]
         component_vis, templates = processing.GetConnectedComponents(image)
@@ -160,7 +161,7 @@ def FilterOutlierSizedTemplates(labeled_templates):
             print("Template:")
             # util.DisplayImage(template * 255)
             return False
-        if width >= 10:
+        if width >= 9:
             print("Unusual width:", width)
             print("Class: ", labeled_template["class"])
             print("Template:")
@@ -205,8 +206,8 @@ def ResizeTemplatesInPlace(labeled_templates, new_size):
     print("Resizing templates")
     for labeled_template in tqdm(labeled_templates):
         template = labeled_template["template"]
-        old_height, old_width = template.shape[0:1]
-        resized = np.zeros((*(new_size), template.shape[2]))
+        old_height, old_width = template.shape[0:2]
+        resized = np.zeros(new_size)
         offset_x = new_size[1] // 2 - old_width // 2
         offset_y = new_size[0] // 2 - old_height // 2
         resized[offset_y : offset_y + old_height, \
@@ -220,18 +221,25 @@ if __name__ == "__main__":
     labeled_templates = SegmentImagesAndApplyLabels(labeled_images)
     labeled_templates = FilterOutlierSizedTemplates(labeled_templates)
 
-    DisplayTemplateInfo(unlabeled_templates, show_class_distribution = False)
+    # DisplayTemplateInfo(labeled_templates, show_class_distribution = False)
     ResizeTemplatesInPlace(labeled_templates, kMaxDigitSize) # (height, width)
 
     num_templates = len(labeled_templates)
-    train_templates = labled_templates[: 6 * labeled_templates // 10]
-    val_templates = labled_templates[6 * labeled_templates // 10 : 8 * labeled_templates // 10]
-    test_templates = labled_templates[8 * labeled_templates // 10 : ]
+    train_templates = labeled_templates[: 5 * num_templates // 10]
+    val_templates = labeled_templates[5 * num_templates // 10 : ]
+    # test_templates = labeled_templates[8 * num_templates // 10 : ]
 
-    train_x, train_y = ConvertToTensors(train_templates)
-    val_x, val_y = ConvertToTensors(val_templates)
-    test_x, test_y = ConvertToTensors(test_templates)
+    train_x, train_y = ml.ConvertLabeledTemplatesToTensors(train_templates, kNumClasses)
+    val_x, val_y = ml.ConvertLabeledTemplatesToTensors(val_templates, kNumClasses)
+    # test_x, test_y = ml.ConvertLabeledTemplatesToTensors(test_templates, kNumClasses)
 
-    classifier = Dense2DClassifier(kNumClasses, kMaxDigitSize)
-    TrainClassifier(classifier, train_x, train_y, val_x, val_y)
+    classifier = ml.Dense2DClassifier(kNumClasses, kMaxDigitSize).cuda()
+    ml.TrainClassifier(classifier, train_x, train_y, val_x, val_y)
     # EvaluateClassifier(classifier, test_x, test_y)
+
+    unlabeled_images = loader.LoadImages(random.sample(loader.GetUnlabeledImageFilenames(), 2000))
+    unlabeled_templates = SegmentImagesAndApplyLabels(unlabeled_images)
+    test_x, _ = ml.ConvertLabeledTemplatesToTensors(unlabeled_templates, kNumClasses)
+    for v in test_x:
+        util.DisplayImage(v.cpu().numpy() * 255)
+        print(classifier([v]))

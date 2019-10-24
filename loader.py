@@ -59,7 +59,7 @@ class DataLoader:
     # Returns a list of an np array per image of shape (H, W, C = 3).
     # If crop is not None then the given crop will be applied to each image.
     # The crop should be of the form (x0, y0, x1, y2).
-    def LoadImages(self, filenames):
+    def _LoadImages(self, filenames):
         images = []
         for i, filename in enumerate(tqdm(filenames)):
             image = Image.open(os.path.join(kDataFolder, filename))
@@ -79,16 +79,19 @@ class DataLoader:
     # Loads from the set of images missing labels.
     # Returned image objects are of the form
     # {"image": image, "label", None}
-    def LoadUnlabeledImages(self):
-        images = self.LoadImages(self.GetUnlabeledImageFilenames())
-        return self._AddLabelsToImages(images, itertools.repeat(None))
+    def LoadUnlabeledImages(self, max_images = None):
+        files = self.GetUnlabeledImageFilenames()
+        if max_images is not None and max_images < len(files):
+            files = random.sample(files, max_images)
 
+        images = self._LoadImages(files)
+        return self._AddLabelsToImages(images, itertools.repeat(None))
 
     # Loads from the set of images with labels.
     # Returned image objects are of the form
     # {"image": image, "label", label (just money for now)}
     def LoadLabeledImages(self):
-        images = self.LoadImages(self.GetLabeledImageFilenames())
+        images = self._LoadImages(self.GetLabeledImageFilenames())
         labels = self._LoadLabels()
         return self._AddLabelsToImages(images, labels)
 
@@ -125,6 +128,10 @@ def SegmentImagesAndApplyLabels(labeled_images):
         image = labeled_image["image"]
         label = labeled_image["label"]
         component_vis, templates = processing.GetConnectedComponents(image)
+
+        if label is None:
+            label = {"money": len(templates) * [-1]}
+
         if len(label["money"]) != len(templates):
             print("Number of connected components differs from the number of digit labels")
             print("Label is:", label["money"])
@@ -155,13 +162,13 @@ def FilterOutlierSizedTemplates(labeled_templates):
         template = labeled_template["template"]
         width = template.shape[1]
         height = template.shape[0]
-        if height <= 11 or height >= 18:
+        if height <= 11 or height > 16:
             print("Unusual height:", height)
             print("Class: ", labeled_template["class"])
             print("Template:")
             # util.DisplayImage(template * 255)
             return False
-        if width >= 9:
+        if width > 8:
             print("Unusual width:", width)
             print("Class: ", labeled_template["class"])
             print("Template:")
@@ -237,9 +244,12 @@ if __name__ == "__main__":
     ml.TrainClassifier(classifier, train_x, train_y, val_x, val_y)
     # EvaluateClassifier(classifier, test_x, test_y)
 
-    unlabeled_images = loader.LoadImages(random.sample(loader.GetUnlabeledImageFilenames(), 2000))
+    unlabeled_images = loader.LoadUnlabeledImages(200)
     unlabeled_templates = SegmentImagesAndApplyLabels(unlabeled_images)
+    unlabeled_templates = FilterOutlierSizedTemplates(unlabeled_templates)
+    ResizeTemplatesInPlace(unlabeled_templates, kMaxDigitSize)
+
     test_x, _ = ml.ConvertLabeledTemplatesToTensors(unlabeled_templates, kNumClasses)
-    for v in test_x:
-        util.DisplayImage(v.cpu().numpy() * 255)
-        print(classifier([v]))
+    for i in range(test_x.size(0)):
+        print("Pictured test sample is classified as: ", classifier(test_x[i : i + 1]))
+        util.DisplayImage(test_x[i].cpu().numpy() * 255)

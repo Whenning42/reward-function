@@ -1,6 +1,6 @@
 import pytest
 import torch
-from segmentation import SkyrogueSegmenter
+from segmentation import SkyrogueSegmenter, FilterOutlierSegments, CenterImages
 
 def test_Threshold():
     # Pytorch uses N, C, H, W
@@ -67,3 +67,31 @@ def test_Segment():
 
     assert len(segments[2]) == 1
     assert segments[2][0].size() == (6, 6)
+
+def test_Filter():
+    # Images are (H, W) format
+    segmentations = [[torch.zeros(4, 4), torch.zeros(4, 4)], \
+                     [torch.zeros(20, 20), torch.zeros(4, 4)], \
+                     [torch.zeros(4, 10)], \
+                     [torch.zeros(10, 4)],
+                     []]
+    filter = FilterOutlierSegments(min_width = 2, max_width = 8, min_height = 2, max_height = 12)
+    filter.FilterInPlace(segmentations)
+
+    assert len(segmentations) == 5
+    assert len(segmentations[0]) == 2
+    assert len(segmentations[1]) == 0
+    assert len(segmentations[2]) == 0
+    assert len(segmentations[3]) == 1
+    assert len(segmentations[4]) == 0
+
+def test_Centering():
+    kNewSize = (20, 10)
+    segmentations = [[torch.ones(4, 8)]]
+
+    centerer = CenterImages(kNewSize)
+    centerer.ResizeInPlace(segmentations)
+    assert segmentations[0][0].size() == kNewSize
+    assert segmentations[0][0][10, 5] == 1
+    assert segmentations[0][0][15, 5] == 0
+    assert segmentations[0][0][10, 7] == 1

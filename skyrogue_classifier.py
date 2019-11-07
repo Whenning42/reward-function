@@ -7,4 +7,4 @@ def Threshold(images):
     assert images.max() <= 1
     assert images.min() >= 0
 
-    return (images[:, 0:1, :, :] == 1).double()
+    return (images[:, 0:1, :, :] == 1).float()

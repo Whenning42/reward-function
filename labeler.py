@@ -3,7 +3,8 @@ import os
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
-import loader
+import data_loader
+import config
 
 def PromptUserForAnnotation():
     money = input("Money: ")
@@ -16,13 +17,17 @@ def WriteAnnotationToFile(image_filename, money, tech_points, labels_filename):
         f.write(image_filename + " money " + str(money) + " tech_points " + str(tech_points) + "\n")
 
 def LabelImages():
-    to_label = set(loader.GetAllFilenames())
-    already_labeled = set(loader.GetAlreadyLabeledFilenames())
-    to_label -= already_labeled
+    config = config.Config()
+
+    loader = data_loader.DataLoader(config.DataFolder, config.LabelFile)
+    _, _, to_label_filenames = data_loader.LoadUnlabeledImages()
+    to_label = set(to_label_filenames)
 
     print("To label count: ", len(to_label))
     print("Already labeled count:", len(already_labeled))
 
+    # Randomness of samples is contingent on the behavior of set.pop(). (I \
+    # haven't looked it up).
     while len(to_label) > 0:
         image_filename = to_label.pop()
         DisplayImage(image_filename)

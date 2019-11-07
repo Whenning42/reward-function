@@ -4,24 +4,18 @@
 from collections import deque
 import torch
 
+# Image is in format (H, W) and pos is in format (y, x)
 def InBounds(image, pos):
     return pos[0] >= 0 and \
            pos[0] < image.shape[0] and \
            pos[1] >= 0 and \
            pos[1] < image.shape[1]
 
-# This class uses torch batches of images with a (N, C, H, W) batch image layout.
-class SkyrogueSegmenter:
+# This class uses torch batches of images with a (N, C, H, W) batch image
+# layout.
+class Segmenter:
     def __init__(self):
         self.kUnlabeledComponent = -1
-
-    def Threshold(self, images):
-        # Input images should be in RGB [0, 1] format.
-        assert images.size(1) == 3
-        assert images.max() <= 1
-        assert images.min() >= 0
-
-        return (images[:, 0:1, :, :] == 1).double()
 
     @staticmethod
     def _ConnectComponent(working_image, \
@@ -53,8 +47,9 @@ class SkyrogueSegmenter:
         return bitmap[extent[0] : extent[1] + 1, \
                       extent[2] : extent[3] + 1]
 
-    # Returns a list of lists of pytorch tensors cropped to the size of their
-    # segmentations
+    # Takes in a container of 0/1 tensor images and returns a list of lists of
+    # tensors containing the connected components of the images. The returned
+    # connected component tensors are cropped to their extent.
     def Segment(self, images):
         assert images.size(1) == 1
         assert images.max() <= 1
@@ -117,7 +112,9 @@ class FilterOutlierSegments:
             if segmentation_contains_outlier:
                 segmentations[i] = []
 
-class CenterImages:
+# Takes any image of size less that new_size and zero pads the image around the
+# borders to make it of size new_size.
+class ResizeImagesCentered:
     def __init__(self, new_size):
         self.new_size = new_size
 

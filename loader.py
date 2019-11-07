@@ -22,7 +22,6 @@ kNumClasses = 10
 # that change.
 kPathKey = "file"
 class DataLoader:
-
     def __init__(self, data_folder, label_file, crop = None):
         self.crop = crop
         self.data_folder = data_folder

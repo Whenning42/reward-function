@@ -1,41 +1,6 @@
 import pytest
 import torch
-from segmentation import SkyrogueSegmenter, FilterOutlierSegments, CenterImages
-
-def test_Threshold():
-    # Pytorch uses N, C, H, W
-    images = torch.zeros(2, 3, 2, 2)
-
-    # First image
-    # Red channel of first image
-    images[0, 0, 0, 0] = 1
-    images[0, 0, 1, 0] = 1
-    # Green channel of first image
-    images[0, 1, 0, 1] = 1
-
-    # Second image
-    # Red channel of second image
-    images[1, 0, 1, 1] = 1
-    # Blue channel of second image
-    images[1, 1, 0, 0] = 1
-
-    segmenter = SkyrogueSegmenter()
-    images = segmenter.Threshold(images)
-
-    # Threshold should return greyscale images
-    assert images.size(1) == 1
-
-    # First image asserts
-    assert images[0, 0, 0, 0] == 1
-    assert images[0, 0, 1, 0] == 1
-    assert images[0, 0, 0, 1] == 0
-    assert images[0, 0, 1, 1] == 0
-
-    # Second image asserts
-    assert images[1, 0, 1, 1] == 1
-    assert images[1, 0, 0, 0] == 0
-    assert images[1, 0, 0, 1] == 0
-    assert images[1, 0, 1, 0] == 0
+from segmentation import Segmenter, FilterOutlierSegments, ResizeImagesCentered
 
 def test_Segment():
     images = torch.zeros(3, 1, 10, 10)
@@ -54,7 +19,7 @@ def test_Segment():
     images[2, 0, 4:7, 4:7] = 1
     images[2, 0, 1:4, 7:10] = 1
 
-    segmenter = SkyrogueSegmenter()
+    segmenter = Segmenter()
     segments = segmenter.Segment(images)
 
     assert len(segments) == 3
@@ -89,7 +54,7 @@ def test_Centering():
     kNewSize = (20, 10)
     segmentations = [[torch.ones(4, 8)]]
 
-    centerer = CenterImages(kNewSize)
+    centerer = ResizeImagesCentered(kNewSize)
     centerer.ResizeInPlace(segmentations)
     assert segmentations[0][0].size() == kNewSize
     assert segmentations[0][0][10, 5] == 1
